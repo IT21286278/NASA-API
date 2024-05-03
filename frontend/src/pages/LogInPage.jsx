@@ -1,6 +1,12 @@
 import SpaceBackgroundVideo from '../components/SpaceBackgroundVideo';
+import { useNavigate } from 'react-router-dom';
 
 export default function LogInPage() {
+  const navigate = useNavigate();
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate('/Marsrover');
+  };
   return (
     <div className="relative min-h-screen">
       <SpaceBackgroundVideo />
@@ -28,7 +34,7 @@ export default function LogInPage() {
           <div className="flex justify-center items-center flex-col">
             <h2 className="text-lg font-bold text-black mb-4">Login</h2>
           </div>
-          <form className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-4">
             <input
               type="email"
               placeholder="Email"
@@ -48,7 +54,7 @@ export default function LogInPage() {
               </button>
             </div>
             <div className="text-center mt-4 ">
-              <a href="/register" className="text-blue-500 hover:text-blue-700">
+              <a href="/register" className="text-blue-400 hover:text-blue-700">
                 Register
               </a>
             </div>
