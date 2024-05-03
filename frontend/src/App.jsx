@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
 import MarsRoversPage from './pages/MarsRoversPage';
-import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<MarsRoversPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Marsrover" element={<MarsRoversPage />} />
         </Routes>
       </Layout>
     </Router>
