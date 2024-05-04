@@ -1,5 +1,4 @@
 import Modal from 'react-modal';
-import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 export default function ImageModel({
   src,
@@ -25,20 +24,16 @@ export default function ImageModel({
         },
       }}
     >
-      <TransformWrapper>
-        <TransformComponent>
-          <img
-            src={src}
-            alt={full_name ? full_name : 'Image'}
-            style={{
-              maxWidth: '90vw',
-              maxHeight: '90vh',
-              objectFit: 'contain',
-              zIndex: 1000,
-            }}
-          />
-        </TransformComponent>
-      </TransformWrapper>
+      <img
+        src={src}
+        alt={full_name ? full_name : 'Image'}
+        style={{
+          maxWidth: '90vw',
+          maxHeight: '90vh',
+          objectFit: 'contain',
+          zIndex: 1000,
+        }}
+      />
     </Modal>
   );
 }
