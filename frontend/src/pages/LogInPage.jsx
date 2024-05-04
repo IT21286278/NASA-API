@@ -1,5 +1,6 @@
 import SpaceBackgroundVideo from '../components/SpaceBackgroundVideo';
 import { useNavigate } from 'react-router-dom';
+import NASALogo from '../assets/NASA_logo.svg.png';
 
 export default function LogInPage() {
   const navigate = useNavigate();
@@ -12,8 +13,20 @@ export default function LogInPage() {
       <SpaceBackgroundVideo />
       <div className="absolute inset-0 flex flex-col sm:flex-row items-center justify-around p-4 md:p-10 space-y-4 sm:space-y-0">
         <div className="bg-white bg-opacity-40 backdrop-sm rounded-lg shadow-lg p-4 md:p-6 w-96 m-2">
-          <div className="flex justify-center items-center flex-col">
-            <h2 className="text-2xl font-bold text-black">NASA</h2>
+          {/* Container for logo and heading */}
+          <div className="flex items-center justify-between">
+            {/* Logo on the left */}
+            <img
+              src={NASALogo}
+              alt="NASA Logo"
+              className="w-12 h-12 mt-1 ml-1"
+            />
+            {/* Container for centering the heading */}
+            <div className="flex-grow text-center">
+              <h2 className="text-2xl font-bold text-black">NASA</h2>
+            </div>
+            {/* Empty div to balance the flex space */}
+            <div className="w-12 h-12"></div>
           </div>
           <p className="text-gray-1200 ">
             The National Aeronautics and Space Administration (NASA) is an
@@ -25,14 +38,20 @@ export default function LogInPage() {
           </p>
           <div className="flex justify-center">
             <button className="mt-4 bg-red-600 text-white rounded px-4 py-2 hover:bg-blue-600">
-              <a href="https://www.nasa.gov/">Learn More</a>
+              <a
+                href="https://www.nasa.gov/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn More
+              </a>
             </button>
           </div>
         </div>
 
         <div className="bg-white bg-opacity-30 backdrop-sm rounded-lg shadow-lg p-4 md:p-6 w-96 m-2">
           <div className="flex justify-center items-center flex-col">
-            <h2 className="text-lg font-bold text-black mb-4">Login</h2>
+            <h2 className="text-2xl font-bold text-black mb-4">Login</h2>
           </div>
           <form onSubmit={handleLogin} className="space-y-4">
             <input
@@ -53,7 +72,7 @@ export default function LogInPage() {
                 Sign In
               </button>
             </div>
-            <div className="text-center mt-4 ">
+            <div className="text-center mt-4">
               <a href="/register" className="text-blue-400 hover:text-blue-700">
                 Register
               </a>
