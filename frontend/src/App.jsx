@@ -3,6 +3,7 @@ import './App.css';
 import Layout from './components/Layout';
 import LogInPage from './pages/LogInPage';
 import MarsRoversPage from './pages/MarsRoversPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LogInPage />} />
           <Route path="/Marsrover" element={<MarsRoversPage />} />
+          <Route path="/Homepage" element={<HomePage />} />
         </Routes>
       </Layout>
     </Router>
