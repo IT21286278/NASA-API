@@ -11,24 +11,20 @@ export default function LogInPage() {
   return (
     <div className="relative min-h-screen">
       <SpaceBackgroundVideo />
-      <div className="absolute inset-0 flex flex-col sm:flex-row items-center justify-around p-4 md:p-10 space-y-4 sm:space-y-0">
-        <div className="bg-white bg-opacity-40 backdrop-sm rounded-lg shadow-lg p-4 md:p-6 w-96 m-2">
-          {/* Container for logo and heading */}
+      <div className="absolute inset-0 flex flex-col sm:flex-row items-center justify-around p-8 md:p-12 space-y-8 sm:space-y-0 overflow-x-auto">
+        <div className="bg-white bg-opacity-40 backdrop-sm rounded-lg shadow-lg p-8 md:p-10 w-full md:max-w-xl m-4">
           <div className="flex items-center justify-between">
-            {/* Logo on the left */}
             <img
               src={NASALogo}
               alt="NASA Logo"
-              className="w-12 h-12 mt-1 ml-1"
+              className="w-16 h-16 mt-1 ml-1"
             />
-            {/* Container for centering the heading */}
             <div className="flex-grow text-center">
-              <h2 className="text-2xl font-bold text-black">NASA</h2>
+              <h2 className="text-4xl font-bold text-black">NASA</h2>
             </div>
-            {/* Empty div to balance the flex space */}
-            <div className="w-12 h-12"></div>
+            <div className="w-16 h-16"></div>
           </div>
-          <p className="text-gray-1200 ">
+          <p className="text-lg font-bold text-gray-800">
             The National Aeronautics and Space Administration (NASA) is an
             independent agency of the U.S. federal government responsible for
             the civilian space program, as well as aeronautics and aerospace
@@ -36,8 +32,8 @@ export default function LogInPage() {
             fueling growth in American industry and supporting quality,
             high-paying jobs across the country and internationally.
           </p>
-          <div className="flex justify-center">
-            <button className="mt-4 bg-red-600 text-white rounded px-4 py-2 hover:bg-blue-600">
+          <div className="flex justify-center mt-6">
+            <button className="bg-red-600 text-white rounded px-6 py-3 hover:bg-blue-600">
               <a
                 href="https://www.nasa.gov/"
                 target="_blank"
@@ -49,30 +45,30 @@ export default function LogInPage() {
           </div>
         </div>
 
-        <div className="bg-white bg-opacity-30 backdrop-sm rounded-lg shadow-lg p-4 md:p-6 w-96 m-2">
+        <div className="bg-white bg-opacity-30 backdrop-sm rounded-lg shadow-lg p-6 md:p-8 w-full md:max-w-xl m-4">
           <div className="flex justify-center items-center flex-col">
-            <h2 className="text-2xl font-bold text-black mb-4">Login</h2>
+            <h2 className="text-4xl font-bold text-black mb-6">Login</h2>
           </div>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-6">
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-1 border rounded"
+              className="w-full px-6 py-3 border rounded"
             />
             <input
               type="password"
               placeholder="Password"
-              className="w-full px-4 py-1 border rounded"
+              className="w-full px-6 py-3 border rounded"
             />
             <div className="flex justify-center items-center flex-col">
               <button
                 type="submit"
-                className="bg-red-600 text-white rounded px-4 py-1 hover:bg-blue-600"
+                className="bg-red-600 text-white rounded px-6 py-3 hover:bg-blue-600"
               >
                 Sign In
               </button>
             </div>
-            <div className="text-center mt-4">
+            <div className="text-center">
               <a href="/register" className="text-blue-400 hover:text-blue-700">
                 Register
               </a>

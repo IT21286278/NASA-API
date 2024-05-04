@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import NASAService from '../services/NASAService';
+import Navbar from '../components/Navbar';
 
 function MarsRoversPage() {
   const [roverPhotos, setRoverPhotos] = useState([]);
@@ -14,6 +15,7 @@ function MarsRoversPage() {
 
   return (
     <div>
+      <Navbar />
       <h1>Rover Photos</h1>
       <div>
         {roverPhotos.map((photo) => (
