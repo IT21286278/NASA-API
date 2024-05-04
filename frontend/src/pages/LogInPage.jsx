@@ -6,7 +6,7 @@ export default function LogInPage() {
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate('/Marsrover');
+    navigate('/Homepage');
   };
   return (
     <div className="relative min-h-screen">
