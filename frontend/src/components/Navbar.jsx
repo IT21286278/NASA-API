@@ -17,6 +17,8 @@ export default function Navbar() {
         <li>
           <a
             href="https://www.nasa.gov/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-3 py-2 text-m rounded bg-blue-500 text-white hover:bg-blue-700 transition-colors duration-300 hidden sm:block"
           >
             Explore more about NASA

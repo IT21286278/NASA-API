@@ -41,7 +41,7 @@ export default function HomePage() {
   return (
     <div
       className="min-h-screen bg-gray-100 pt-[66px]"
-      style={{ marginTop: '50px' }}
+      style={{ marginTop: '30px' }}
     >
       {' '}
       <Navbar />

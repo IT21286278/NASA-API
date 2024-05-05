@@ -59,30 +59,43 @@ export default function EarthImagery() {
     <div className="flex flex-col mx-auto px-4 py-5 bg-dominant min-h-screen overflow-auto">
       <Navbar />
       <div className="flex flex-col items-center relative z-10 mt-20 ">
-        <h1 className="text-2xl font-bold text-white mb-5 mt-7">
+        <h1 className="text-2xl font-bold text-white mb-1 mt-2">
           Earth Imagery
         </h1>
-        <div className="flex flex-col sm:flex-row gap-5 items-center justify-center">
-          <input
-            type="date"
-            value={date}
-            onChange={handleDateChange}
-            className="border-2 border-white rounded-md px-2 text-black bg-white bg-opacity-50 w-full sm:w-auto"
-          />
-          <input
-            type="number"
-            value={latitude}
-            onChange={handleLatitudeChange}
-            placeholder="Latitude"
-            className="border-2 border-white rounded-md px-2 text-black bg-white bg-opacity-50 w-full sm:w-auto"
-          />
-          <input
-            type="number"
-            value={longitude}
-            onChange={handleLongitudeChange}
-            placeholder="Longitude"
-            className="border-2 border-white rounded-md px-2 text-black bg-white bg-opacity-50 w-full sm:w-auto"
-          />
+        <div className="overflow-hidden sm:rounded-lg p-6 flex flex-col md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 md:mb-0 mr-2">
+            <label className="block text-sm font-medium text-white">Date</label>
+            <input
+              type="date"
+              value={date}
+              onChange={handleDateChange}
+              className="border-2 border-white rounded-md px-2 text-black bg-white bg-opacity-50 w-full sm:w-auto"
+            />
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 md:mb-0 mr-2">
+            <label className="block text-sm font-medium text-white">
+              Longitude
+            </label>
+            <input
+              type="number"
+              value={latitude}
+              onChange={handleLatitudeChange}
+              placeholder="Latitude"
+              className="border-2 border-white rounded-md px-2 text-black bg-white bg-opacity-50 w-full sm:w-auto"
+            />
+          </div>
+          <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4 md:mb-0">
+            <label className="block text-sm font-medium text-white">
+              Latitude
+            </label>
+            <input
+              type="number"
+              value={longitude}
+              onChange={handleLongitudeChange}
+              placeholder="Longitude"
+              className="border-2 border-white rounded-md px-2 text-black bg-white bg-opacity-50 w-full sm:w-auto"
+            />
+          </div>
         </div>
         {isLoading ? (
           <Loading />
