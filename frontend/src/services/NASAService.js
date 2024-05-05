@@ -11,7 +11,7 @@ const NASAService = {
       console.log('Rover photos:', response);
       return response.data.photos;
     } catch (error) {
-      console.error('Error fetching rover photos:', error);
+      console.error('Error occured while fetching rover photos:', error);
       return [];
     }
   },
@@ -26,6 +26,19 @@ const NASAService = {
       return data;
     } catch (error) {
       console.error('Error occured when fetching earth imagery photos:', error);
+      return {};
+    }
+  },
+
+  getPictureOfTheDay: async () => {
+    try {
+      const response = await axios.get(
+        `${BaseURL}/planetary/apod?api_key=${API_KEY}`
+      );
+      console.log('Picture of the day:', response);
+      return response.data;
+    } catch (error) {
+      console.error('Error occured while fetching picture of the day:', error);
       return {};
     }
   },
