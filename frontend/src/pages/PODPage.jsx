@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import NASAService from '../services/NASAService';
 import Loading from '../components/Loading';
 import Navbar from '../components/Navbar';
-import HomeBackgroundVideo from '../components/HomeBackgroundVideo';
 
 export default function PODPage() {
   const [pictureOfTheDay, setPictureOfTheDay] = useState(null);
