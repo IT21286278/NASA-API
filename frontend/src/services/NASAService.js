@@ -1,7 +1,21 @@
+import axios from 'axios';
 const API_KEY = 'fHCMuT8DH6AsEOMpcITm7ZUGESMhuDVg54DoLxM8';
 const BaseURL = 'https://api.nasa.gov';
 
 const NASAService = {
+  getMarsRoverPhotos: async (roverName, sol, page) => {
+    try {
+      const response = await axios.get(
+        `${BaseURL}/mars-photos/api/v1/rovers/${roverName}/photos?sol=${sol}&page=${page}&api_key=${API_KEY}`
+      );
+      console.log('Rover photos:', response);
+      return response.data.photos;
+    } catch (error) {
+      console.error('Error fetching rover photos:', error);
+      return [];
+    }
+  },
+
   getEarthImageryPhoto: async (lat, lon, date) => {
     try {
       const response = await fetch(

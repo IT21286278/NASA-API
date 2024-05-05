@@ -17,7 +17,7 @@ export default function HomePage() {
       image: 'https://facts.net/wp-content/uploads/2023/05/Mars-730x451.jpeg',
       description:
         "Explore the Red Planet through the eyes of NASA's rovers. Dive into the landscapes and discoveries of Mars.",
-      link: '/explore-mars',
+      link: '/Marsrover',
     },
     {
       title: 'Earth Imagery',
