@@ -1,8 +1,17 @@
+import { useContext, useEffect } from 'react';
 import HomeBackgroundVideo from '../components/HomeBackgroundVideo';
 import NavCard from '../components/NavCard';
 import Navbar from '../components/Navbar';
+import AuthContext from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomePage() {
+  const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    !user && navigate('/', { replace: true });
+  }, []);
   const cards = [
     {
       title: 'Picture of the Day',

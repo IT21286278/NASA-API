@@ -81,7 +81,7 @@ export const login = async (req, res) => {
     const payload = { _id: isUserExist._id }; //id of the user as payload
 
     const jwtToken = jwt.sign(payload, process.env.JWT_SECRET, {
-      expiresIn: '3h',
+      expiresIn: '5h',
     });
 
     const user = { ...isUserExist._doc, password: undefined };

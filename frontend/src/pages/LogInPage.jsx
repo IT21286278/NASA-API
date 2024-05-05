@@ -1,13 +1,32 @@
 import SpaceBackgroundVideo from '../components/SpaceBackgroundVideo';
-import { useNavigate } from 'react-router-dom';
 import NASALogo from '../assets/NASA_logo.svg.png';
+import { useContext, useState } from 'react';
+import AuthContext from '../context/AuthContext';
+import ToastContext from '../context/ToastContext';
 
 export default function LogInPage() {
-  const navigate = useNavigate();
+  const [credentials, setCredentials] = useState({
+    email: '',
+    password: '',
+  });
+  const { loginUser } = useContext(AuthContext);
+  const { toast } = useContext(ToastContext);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setCredentials({ ...credentials, [name]: value });
+  };
+
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate('/Homepage');
+    if (!credentials.email || !credentials.password) {
+      toast.error('Please enter all the required fields!');
+      return;
+    }
+
+    loginUser(credentials);
   };
+
   return (
     <div className="relative min-h-screen">
       <SpaceBackgroundVideo />
@@ -53,11 +72,19 @@ export default function LogInPage() {
             <input
               type="email"
               placeholder="Email"
+              name="email"
               className="w-full px-6 py-3 border rounded"
+              required
+              value={credentials.email}
+              onChange={handleInputChange}
             />
             <input
               type="password"
               placeholder="Password"
+              name="password"
+              required
+              value={credentials.password}
+              onChange={handleInputChange}
               className="w-full px-6 py-3 border rounded"
             />
             <div className="flex justify-center items-center flex-col">
